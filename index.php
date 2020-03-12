@@ -1,7 +1,8 @@
 <?php
-	require_once("action/LoginAction.php");
-	$action= new LoginAction();
+	require_once("action/SignInAction.php");
+	$action= new SignInAction();
 	$data = $action->execute();
+
 ?>
 
 <!DOCTYPE html>
