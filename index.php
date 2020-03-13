@@ -1,6 +1,6 @@
 <?php
-	require_once("action/SignInAction.php");
-	$action= new SignInAction();
+	require_once("action/IndexAction.php");
+	$action= new IndexAction();
 	$data = $action->execute();
 
 ?>
@@ -19,7 +19,7 @@
 		<form action="index.php" method="post">
 			<div>
 				<label>Nom d'usager</label>
-				<input type="text" name="username" value="" id="username" required="">
+				<input type="text" name="username" value="<?= $data["username"] ?>" id="username" required="">
 			</div>
 			<div>
 				<label>Mot de passe : </label>

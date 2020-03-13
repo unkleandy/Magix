@@ -16,19 +16,13 @@
 		protected abstract function executeAction();
 
 		public function execute() {
-			if (!empty ($_GET["logout"])){
-				session_unset();
-				session_destroy();
-				session_start();
-			}
-
 			if (!isset($_SESSION["visibility"])) {
 				$_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
 			}
 
 			//supposed to be hidden == return to login page
 			if($_SESSION ["visibility"]< $this->pageVisibility){
-				header("location:login.php");
+				header("location:index.php");
 				exit();
 			}
 

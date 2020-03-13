@@ -2,20 +2,21 @@
 
 	require_once("action/CommonAction.php");
 
-	class SignInAction extends CommonAction {
+	class IndexAction extends CommonAction {
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
 		}
 
 		protected function executeAction() {
+			$return=[];
 			$connectionError = true;
 
+			//LOGIN
 			if (isset($_POST["username"]) && isset($_POST["password"])){
 				$data["username"] = $_POST["username"];
 				$data["password"] = $_POST["password"];
 				$result = CommonAction::callAPI("signin", $data);
-
 				if ($result == "INVALID_USERNAME_PASSWORD") {
 					// err
 				}
@@ -24,12 +25,26 @@
 					$key = $result->key;
 					$_SESSION["key"] = $key;
 					$_SESSION["username"] =$_POST["username"];
-					header("Location:lobby.php");
+					$_SESSION["visibility"]= CommonAction::$VISIBILITY_MEMBER;
+					header("location:lobby.php");
 					exit;
 				}
 			}
+			//COOKIES
+			$username = "";
 
+			if (!empty($_POST["username"])) {
+				setcookie("username", $_POST["username"], 0);
+				$username =  $_POST["username"];
+			}
+			else {
+				if (!empty($_COOKIE["username"])) {
+					$username = $_COOKIE["username"];
+				}
+			}
+
+			$return["connectionError"]= $connectionError;
+			$return["username"]=$username;
+			return $return;
 		}
-
-
 	}

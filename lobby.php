@@ -1,3 +1,12 @@
+<?php
+	require_once("action/LobbyAction.php");
+
+	$action = new LobbyAction();
+	$data = $action->execute();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +16,14 @@
 	<title>Magix-Time -- Lobby</title>
 </head>
 <body>
-	<button>signout</button>
-<iframe style="width:700px;height:240px;"
+<div><a href="?logout=true">logout</a> </div>
+<div><a href="?pvp=true">pvp</a> </div>
+<div><a href="?training=true">training</a> </div>
+	<input class="button" a href="?logout=true" value="déconnexion" />
+	<input type="submit"  class="button" name="play" value="jouer partie" />
 
-		src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>">
+<iframe style="width:700px;height:240px;"
+		src="https://magix.apps-de-cours.com/server/#/chat/<?= $data["key"]?>">
 </iframe>
 
 </body>
