@@ -20,6 +20,7 @@
 			if (!empty($_GET["pvp"])){
 				$data["type"] = "PVP";
 				CommonAction::callAPI("games/auto-match", $data);
+				$_SESSION["visibility"] = CommonAction::$VISIBILITY_PLAYER;
 				header("location:game.php");
 			}
 			if (!empty($_GET["training"])){
