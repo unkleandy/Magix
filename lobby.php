@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Magix-Time -- Lobby</title>
+	<script src="./js/javascript.js"></script>
 </head>
 <body>
 <div><a href="?logout=true">logout</a> </div>
