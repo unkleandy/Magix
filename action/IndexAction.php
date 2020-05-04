@@ -18,7 +18,10 @@
 				$data["password"] = $_POST["password"];
 				$result = CommonAction::callAPI("signin", $data);
 				if ($result == "INVALID_USERNAME_PASSWORD") {
-					// err
+					echo "<script>";
+					echo "alert('nom d'usager et mot de passe invalides');";
+					echo "window.location='index.php'; ";
+					echo "</scrit>";
 				}
 				else {
 					//var_dump($result);exit;
@@ -27,7 +30,7 @@
 					$_SESSION["username"] =$_POST["username"];
 					$_SESSION["visibility"]= CommonAction::$VISIBILITY_MEMBER;
 					header("location:lobby.php");
-					exit;
+
 				}
 			}
 			//COOKIES
@@ -42,7 +45,6 @@
 					$username = $_COOKIE["username"];
 				}
 			}
-
 			$return["connectionError"]= $connectionError;
 			$return["username"]=$username;
 			return $return;
