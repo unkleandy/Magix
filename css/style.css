@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+    height:100vh;
+    position: relative;
+}
+
+/* INDEX */
+.index{
+    width: 100vw;
+    height:100vh;
+    background-image: url(../img/background_index.gif);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+form{
+    background-image: url('../img/banner_cloud.png');
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    width: 635px;
+    height:300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    left:calc(50vw - 312px);
+    opacity:0;
+}
+form .login{
+    width:80%;
+    display: flex;
+    flex-direction: row;
+}
+form .login div{
+    text-align: center;
+    margin-right: 5px;
+}
+form button{
+    margin-top: 35px;
+    background-color: rgb(178,45,45);
+    font-family: 'Gloria Hallelujah', cursive;
+    cursor:url('../img/gauntlet.png'), auto;
+    font-size: 1rem;
+    border: black solid 1px;
+    border-radius: 5px;
+    width:150px;
+}
+.intro_sword{
+    position: absolute;
+    width:442px;
+    height:205px;
+    background-image: url(../img/intro_sword.png);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    z-index: 1;
+    left:-2000px;
+}
+.intro_title{
+    position: absolute;
+    top:60px;
+    left:calc(50vw - 221px);
+}
+.intro_magix_tm{
+    position: absolute;
+    width:442px;
+    height:205px;
+    background-image: url(../img/intro_magix_tm.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 4;
+}
+.intro_ie{
+    position: absolute;
+    width:442px;
+    height:205px;
+    background-image: url(../img/intro_ie.png);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    
+}
+
+
+/* LOBBY */
+.lobby{
+    display:grid;
+    grid-template-rows: 466px auto 323px;
+    grid-template-columns: 600px auto;
+    grid-template-areas:
+    "a d"
+    "b d"
+    "c e";
+    ;
+    background-color: rgb(252, 244, 91);
+}
+.lobby .window{
+    border:3px black solid;
+    background-image: url(../img/game_bg.jpg);
+    grid-area: d;
+}
+.lobby iframe{
+    margin: auto;
+    color: rgb(147, 255, 192);
+    
+}
+.prismo{
+    position: relative;
+    grid-area:a;
+}
+.prismo_body {
+    position: absolute;
+    z-index: 2;
+    width: 600px;
+    height: 466px;
+    background-image: url(../img/prismo_body.png);
+}
+.prismo_eye{
+    background-image: url(../img/prismo_eye.png);
+    width:35px;
+    height: 57px;
+    position: absolute;
+    top: 75px;
+    left:320px;
+}
+.prismo_vertical{
+    width:600px;
+    background-image: url(../img/prismo_vertical.png);
+    grid-area: b;
+}
+.prismo_corner{
+    width:600px;
+    height:323px;
+    background-image: url(../img/prismo_corner.png);
+    grid-area:c;
+}
+.prismo_horizontal{
+    display:flex;
+    align-items: top;
+    justify-content: space-between;
+    background-image: url(../img/prismo_horizontal.png);
+    height:323px;
+    overflow: visible;
+    grid-area: e;
+}
+.prismo_ray{
+    width:5px;
+    height:25px;
+    position:absolute;
+    z-index:10;
+}
+.prismo_pickle {
+    width:100px;
+    height:113px;
+    background-image: url(../img/pickles.png);
+    position:absolute;
+    z-index: 9;
+}
+.options{
+    margin: -100px 60px 0 -40px;
+}
+.options p{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.options a {
+    text-decoration: none;
+    color: transparent;
+}
+.options a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* GAME */
+.game{
+    background-image: url(../img/game_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.welcomeText{
+    
+}
+.endScreen {
+    z-index: 20;
+    height: 100vh;
+    width: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+}
+.opponent .player{
+   position: relative;
+}
+.opponent .stats{
+    z-index: 2;
+}
+
+.character {
+    position: absolute;
+    z-index: 4;
+    overflow: visible;
+    display:flex;
+    flex-direction: column;
+}
+.opponent .character {
+    top:0;
+    left:0;
+}
+.player .character {
+    bottom:0;
+    right:0;
+}
+.hp {
+    line-height: 50px;
+    text-align: center;
+    background-image: url(../img/heart.png);
+    background-size: cover;
+    width: 50px;
+    height: 55px;
+}
+.mp {
+    line-height: 50px;
+    text-align: center;
+    background-image: url(../img/mana.png);
+    width: 50px;
+    height: 55px;
+}
+.heroPower, .endTurn{
+    z-index: 4;
+    background-color: rgb(128, 255, 0);
+    border-radius: 5px;
+    text-align: center;
+    
+    width: 100%;
+}
+.yourTurn{
+    display:flex;
+    width: 100px;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.sleeping{
+    opacity: .6;
+}
+.stats{
+    display: flex;
+    flex-direction: row;
+}
+.username{
+    padding:20px;
+    text-align: center;
+    background-image: radial-gradient(green 50%,transparent 70%);
+    color: white;
+}
+.opponent, .player{
+
+    position: relative;
+ }
+
+ .opponent .stats{
+     z-index: 2;
+     top:10px;
+ }
+ .heroClass{
+     display: inline-block;
+ }
+ .opponent .heroClass img{
+     -moz-transform: scaleX(-1);
+     -o-transform: scaleX(-1);
+     -webkit-transform: scaleX(-1);
+     transform: scaleX(-1);
+     filter: FlipH;
+     -ms-filter: "FlipH";
+ }
+ .player .heroClass img{
+    float:right;
+}
+ .player .heroClass {
+     bottom:0;
+     right:0;
+ }
+
+
+
+
+/* CARD */
+.container {
+    z-index: 0;
+    height: 30vh;
+	display: flex;
+	align-items:stretch;
+	justify-content: center;
+	width:1000px;
+	margin: 25px auto;
+}
+
+.card {
+    z-index: 0;
+    background-position: center;
+    color:white;
+    position: relative;
+    width: 100px;
+    height: 150px;
+	border:1px solid black;
+	background-color:#555;
+	padding:15px;
+	margin:0 10px;
+	transition: 1s;
+	box-shadow: 0 0 10px black;
+}
+
+.card__overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color:rgba(36, 210, 71, 0.5);
+}
+.card:hover .card__overlay{
+    opacity: 1;
+}
+.card .taunt{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    left:-10px;
+    width:30px;
+    height:30px;
+    background-image: url(../img/cards/taunt.png);  
+}
+.card .cost{
+    padding: 0px 10px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: green;
+    border-radius: 20px;
+}
+.cardstats{
+    position: absolute;
+    bottom: -10px;
+    right:15px;
+    z-index: 2;
+    color:black;
+}
+.cardstats .hp{
+    position: absolute;
+    height:27px;
+    width: 25px;
+    bottom:0;
+    font-size: 0.7rem;
+    line-height: 27px;
+}
+.cardstats .atk{
+    position: absolute;
+    background-image: url(../img/cards/atk.png);
+    height:27px;
+    width: 25px;
+    left: -30px;
+    bottom:0;
+    background-size: cover;
+    font-size: 0.7rem;
+    line-height: 27px;
+}
+
+.card * {
+	font-size:1rem;
+    font-weight:bold;
+    text-align:center;
+}
+.card:hover {
+	cursor:pointer;
+	background-color:#999;
+	box-shadow: 0 0 10px #999;
+}
+.flash {
+    position: absolute;
+    z-index: 11;
+    top: 150px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    display: none; }
